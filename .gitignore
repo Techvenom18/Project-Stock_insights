@@ -1,0 +1,7 @@
+#To exclude unnecessary files like Jupyter checkpoints or system files:
+
+1. __pycache__/
+2. .ipynb_checkpoints/
+3. *.pyc
+4. .DS_Store
+5. .env
