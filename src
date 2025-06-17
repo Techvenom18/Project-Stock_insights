@@ -1,0 +1,8 @@
+project-root/
+├── data/
+│   └── Nifty_HCL_Close_2011_2022.csv
+├── notebooks/
+│   └── nifty_analysis.ipynb
+├── README.md
+├── requirements.txt
+└── .gitignore
