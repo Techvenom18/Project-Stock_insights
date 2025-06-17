@@ -1,0 +1,27 @@
+##IF The error indicates that the yfinance module is not installed in this environment, so I can't fetch live financial data directly here.
+##However, you can run the following code in your local Jupyter Notebook (where yfinance is installed) to generate and save the CSV file
+
+#Jupyter Notebook Code to Create CSV
+
+import pandas as pd
+import yfinance as yf
+import datetime as dt
+
+# Define ticker symbols and date range
+tickers = ['^NSEI', 'HCLTECH.NS']
+start = dt.datetime(2011, 1, 1)
+end = dt.datetime(2022, 12, 31)
+
+# Download 'Close' price data
+data = {}
+for symbol in tickers:
+    data[symbol] = yf.download(symbol, start=start, end=end)[['Close']]
+
+# Merge data and rename columns
+df = pd.concat(data, axis=1)
+df.columns = ['Nifty', 'HCL']
+
+# Save to CSV
+df.to_csv("Nifty_HCL_Close_2011_2022.csv", index=True)
+
+print("✅ CSV file created: Nifty_HCL_Close_2011_2022.csv")
